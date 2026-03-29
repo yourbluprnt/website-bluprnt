@@ -95,98 +95,122 @@
       border-color: rgba(252, 211, 77, 0.5);
     }
 
-    /* ─── HERO SPLIT ──────────────────────────────────────────── */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 100vh;
+    /* ─── HERO UNIFIED ───────────────────────────────────────────── */
+    .hero-unified {
+      background: linear-gradient(160deg, #060810 0%, #0D2952 60%, #0f1623 100%);
+      min-height: 65vh;
       padding-top: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    /* Business half */
-    .hero-biz {
+    .hero-unified::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 70%, rgba(37,99,235,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 30%, rgba(13,41,82,0.5) 0%, transparent 60%);
+    }
+
+    .hero-unified::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .hero-unified-content {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      padding: 80px 40px;
+    }
+
+    /* ─── SEGMENT SPLIT ───────────────────────────────────────────── */
+    .segment-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .segment-biz {
       background: linear-gradient(135deg, #0D2952 0%, #1a4a8f 60%, #2563EB 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 80px 60px;
+      padding: 72px 60px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
+      transition: filter 0.25s;
     }
 
-    .hero-biz::before {
+    .segment-biz::before {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse at 20% 80%, rgba(37, 99, 235, 0.4) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(13, 41, 82, 0.6) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 20% 80%, rgba(37,99,235,0.4) 0%, transparent 60%);
     }
 
-    .hero-biz-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
+    .segment-biz:hover { filter: brightness(1.08); }
 
-    .hero-biz-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Construction half */
-    .hero-con {
+    .segment-con {
       background: linear-gradient(135deg, #0a0c14 0%, #111827 60%, #1c2030 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 80px 60px;
+      padding: 72px 60px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
+      transition: filter 0.25s;
     }
 
-    .hero-con::before {
+    .segment-con::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 80% 80%, rgba(245, 158, 11, 0.15) 0%, transparent 55%),
-        radial-gradient(ellipse at 20% 20%, rgba(15, 17, 23, 0.8) 0%, transparent 60%);
+        radial-gradient(ellipse at 80% 80%, rgba(245,158,11,0.15) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 20%, rgba(15,17,23,0.8) 0%, transparent 60%);
     }
 
-    /* diagonal texture for construction */
-    .hero-con::after {
+    .segment-con::after {
       content: '';
       position: absolute;
       inset: 0;
       background-image: repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 20px,
-        rgba(245, 158, 11, 0.02) 20px,
-        rgba(245, 158, 11, 0.02) 21px
+        -45deg, transparent, transparent 20px,
+        rgba(245,158,11,0.02) 20px, rgba(245,158,11,0.02) 21px
       );
     }
 
-    .hero-con-content {
+    .segment-con:hover { filter: brightness(1.1); }
+
+    .segment-content {
       position: relative;
       z-index: 1;
     }
 
-    .hero-divider {
+    .segment-divider {
       position: absolute;
-      top: 72px; bottom: 0;
+      top: 0; bottom: 0;
       left: 50%;
       width: 2px;
-      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.15) 80%, transparent);
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.12) 20%, rgba(255,255,255,0.12) 80%, transparent);
       z-index: 10;
+      pointer-events: none;
     }
 
     .hero-logo {
@@ -1110,9 +1134,9 @@
 
     /* ─── RESPONSIVE ──────────────────────────────────────────── */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-divider { display: none; }
-      .hero-biz, .hero-con { min-height: 60vh; padding: 60px 32px; }
+      .segment-split { grid-template-columns: 1fr; }
+      .segment-divider { display: none; }
+      .segment-biz, .segment-con { padding: 60px 32px; }
       .cards-grid { grid-template-columns: 1fr 1fr; }
       .biz-cta, .con-cta { flex-direction: column; text-align: center; }
       .footer-top { grid-template-columns: 1fr 1fr; }
@@ -1156,36 +1180,38 @@
     </ul>
   </nav>
 
-  <!-- ─── HERO SPLIT ──────────────────────────────────────── -->
-  <div class="hero" id="top">
-    <div class="hero-divider"></div>
+  <!-- ─── HERO UNIFIED ────────────────────────────────────────── -->
+  <div class="hero-unified" id="top">
+    <div class="hero-unified-content">
+      <img src="logo-full.png" alt="BluPrnt Solutions" class="hero-logo" />
+      <h1 class="hero-headline" style="color:#FFFFFF;">We've built businesses.<br />We know what keeps<br />you up at night.</h1>
+      <p class="hero-sub" style="color:rgba(255,255,255,0.75); max-width:640px; margin:0 auto 0;">As business owners ourselves, we understand the real pressure of tight margins, cashflow gaps, and not always knowing what options are available. We build real-time visual dashboards so you have a pulse on your business at all times — not just what your accountant tells you at year end, when it's too late to act.</p>
+    </div>
+  </div>
 
-    <!-- Business Half -->
-    <div class="hero-biz">
-      <div class="hero-biz-grid"></div>
-      <div class="hero-biz-content">
-        <img src="logo-full.png" alt="BluPrnt Solutions" class="hero-logo" />
-        <p class="hero-division biz-division">Business Solutions</p>
-        <h1 class="hero-headline">We've built businesses.<br />We know what keeps<br />you up at night.</h1>
-        <p class="hero-sub">We're business owners too — so we bring more than financial expertise. We bring firsthand experience of the pressures, the tradeoffs, and the moments where the right advice changes everything.</p>
-        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-          <a href="#business" class="hero-btn hero-btn-biz">Explore Services</a>
-          <a href="#" onclick="openModal('biz'); return false;" style="display:inline-block; padding:14px 28px; border-radius:8px; font-size:15px; font-weight:600; text-decoration:none; border:2px solid rgba(255,255,255,0.45); color:#FFFFFF; transition:all 0.25s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Book a Free Call</a>
-        </div>
+  <!-- ─── SEGMENT SPLIT ─────────────────────────────────────────── -->
+  <div class="segment-split" style="position:relative;">
+    <div class="segment-divider"></div>
+
+    <!-- Business Segment -->
+    <div class="segment-biz" onclick="document.getElementById('business').scrollIntoView({behavior:'smooth'})">
+      <div class="segment-content">
+        <img src="logo-full.png" alt="BluPrnt Solutions" class="hero-logo" style="height:100px;" />
+        <p class="hero-division biz-division" style="margin-top:16px;">Business Solutions</p>
+        <h2 class="hero-headline" style="font-size:clamp(24px,2.5vw,38px); color:#FFFFFF;">CFO-level leadership<br />for growing businesses.</h2>
+        <p class="hero-sub" style="color:rgba(255,255,255,0.7); font-size:14px; margin-bottom:28px;">Fractional CFO, cashflow management, capital raising, and financial advisory — for businesses at any stage.</p>
+        <a href="#business" class="hero-btn hero-btn-biz" onclick="event.stopPropagation()">Explore Business Services</a>
       </div>
     </div>
 
-    <!-- Construction Half -->
-    <div class="hero-con">
-      <div class="hero-con-content">
-        <img src="logo-full.png" alt="BluPrnt Solutions" class="hero-logo-con" />
-        <p class="hero-division con-division">Construction</p>
-        <h1 class="hero-headline">We've run the jobs.<br />We know where the<br />money goes.</h1>
-        <p class="hero-sub">We're not consultants reading from a textbook. We've operated businesses in the trades and we know firsthand where margins get eaten, where cashflow gets tight, and what your options actually are.</p>
-        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-          <a href="#construction" class="hero-btn hero-btn-con">Explore Services</a>
-          <a href="#" onclick="openModal('con'); return false;" style="display:inline-block; padding:14px 28px; border-radius:8px; font-size:15px; font-weight:600; text-decoration:none; border:2px solid rgba(245,158,11,0.45); color:#FCD34D; transition:all 0.25s;" onmouseover="this.style.background='rgba(245,158,11,0.1)'" onmouseout="this.style.background='transparent'">Book a Free Call</a>
-        </div>
+    <!-- Construction Segment -->
+    <div class="segment-con" onclick="document.getElementById('construction').scrollIntoView({behavior:'smooth'})">
+      <div class="segment-content">
+        <img src="logo-full.png" alt="BluPrnt Solutions" class="hero-logo-con" style="height:100px;" />
+        <p class="hero-division con-division" style="margin-top:16px;">Construction</p>
+        <h2 class="hero-headline" style="font-size:clamp(24px,2.5vw,38px); color:#FFFFFF;">Built for the trades.<br />Driven by numbers.</h2>
+        <p class="hero-sub" style="color:rgba(255,255,255,0.6); font-size:14px; margin-bottom:28px;">Fractional CFO services, job costing, real-time dashboards, and capital raising for contractors and trades businesses.</p>
+        <a href="#construction" class="hero-btn hero-btn-con" onclick="event.stopPropagation()">Explore Construction Services</a>
       </div>
     </div>
   </div>
