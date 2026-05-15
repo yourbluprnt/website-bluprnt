@@ -1227,6 +1227,75 @@
     .final-cta-sub { font-size: 17px; color: #BFDBFE; line-height: 1.7; margin-bottom: 40px; }
     .final-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
+    /* ─── HAMBURGER / MOBILE NAV ─────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #FFFFFF;
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      z-index: 98;
+      background: rgba(6, 8, 16, 0.98);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 20px 20px;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; display: flex; flex-direction: column; }
+    .mobile-menu ul li a {
+      display: block;
+      padding: 15px 12px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .mobile-menu ul li:last-child a { border-bottom: none; }
+    .mobile-menu .mob-biz { color: #93C5FD; }
+    .mobile-menu .mob-con { color: #FCD34D; }
+    .mobile-menu .mob-plain { color: #CBD5E1; }
+    .mobile-menu ul li a:hover { background: rgba(255,255,255,0.06); }
+    .mobile-menu .mob-btn {
+      display: block;
+      margin-top: 16px;
+      padding: 15px;
+      background: #2563EB;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s;
+    }
+    .mobile-menu .mob-btn:hover { background: #1D4ED8; }
+
     /* ─── RESPONSIVE ──────────────────────────────────────────── */
     @media (max-width: 900px) {
       .segment-split { grid-template-columns: 1fr; }
@@ -1248,17 +1317,43 @@
       .mock-chart-area { border-right: none; border-bottom: 1px solid #E2E8F0; }
       .founder-inner { grid-template-columns: 1fr; gap: 48px; }
       .final-cta-box { padding: 52px 36px; }
+      .accounting-callout-grid { grid-template-columns: 1fr !important; }
+    }
+
+    @media (max-width: 768px) {
+      /* Switch to hamburger nav */
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      nav { padding: 0 20px; }
+
+      /* Tighten hero */
+      .hero-unified-content { padding: 56px 24px; }
+      .hero-logo { height: 120px; }
+      .hero-logo-con { height: 120px; }
+      .segment-biz, .segment-con { padding: 52px 28px; }
+
+      /* Reduce section vertical padding */
+      .section { padding: 72px 0; }
+      .problem-section { padding: 72px 0; }
+      .dashboard-section { padding: 72px 0; }
+      .steps-section { padding: 72px 0; }
+      .stats-bar-new { padding: 52px 0; }
+      .founder-section { padding: 72px 0; }
+      .final-cta-section { padding: 72px 24px; }
+      #pricing { padding: 72px 0; }
+
+      /* Dashboard: horizontal scroll on narrow screens */
+      .mock-db-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .mock-db { min-width: 520px; }
     }
 
     @media (max-width: 600px) {
-      nav { padding: 0 20px; }
-      .nav-links { gap: 4px; }
-      .nav-links a { padding: 6px 12px; font-size: 12px; }
+      nav { padding: 0 16px; }
       .cards-grid { grid-template-columns: 1fr; }
       .section-inner { padding: 0 20px; }
-      .biz-cta, .con-cta { padding: 36px 28px; }
+      .biz-cta, .con-cta { padding: 36px 24px; }
       .footer-top { grid-template-columns: 1fr; }
-      .modal { padding: 32px 24px; }
+      .modal { padding: 32px 20px; }
       .form-row { grid-template-columns: 1fr; }
       .pricing-quick { grid-template-columns: 1fr; }
       .floating-cta { bottom: 16px; right: 16px; }
@@ -1267,6 +1362,14 @@
       .mock-db-kpis { grid-template-columns: 1fr 1fr; }
       .problem-inner, .founder-inner { padding: 0 20px; }
       .dashboard-inner, .steps-inner { padding: 0 20px; }
+      .section { padding: 56px 0; }
+      .problem-section, .dashboard-section, .steps-section, .founder-section { padding: 56px 0; }
+      #pricing { padding: 56px 0; }
+      .final-cta-section { padding: 56px 20px; }
+      .final-cta-box { padding: 44px 24px; }
+      .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .biz-cta-text h3, .con-cta-text h3 { font-size: 18px; }
+      .accounting-callout-grid { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -1288,7 +1391,20 @@
       <li><a href="#pricing" style="color:#94A3B8; border:1px solid rgba(148,163,184,0.25); padding:8px 18px; border-radius:6px; font-size:14px; font-weight:500; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='rgba(148,163,184,0.1)'" onmouseout="this.style.background='transparent'">Pricing</a></li>
       <li><a href="#" onclick="openModal('biz'); return false;" style="background:#2563EB; color:#FFFFFF; padding:8px 18px; border-radius:6px; font-size:14px; font-weight:600; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='#1D4ED8'" onmouseout="this.style.background='#2563EB'">Get in Touch</a></li>
     </ul>
+    <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- ─── MOBILE MENU ───────────────────────────────────────── -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#business" class="mob-biz" onclick="closeMobileMenu()">Business Solutions</a></li>
+      <li><a href="#construction" class="mob-con" onclick="closeMobileMenu()">Construction</a></li>
+      <li><a href="#pricing" class="mob-plain" onclick="closeMobileMenu()">Pricing</a></li>
+    </ul>
+    <button class="mob-btn" onclick="openModal('biz'); closeMobileMenu();">Get in Touch</button>
+  </div>
 
   <!-- ─── HERO UNIFIED ────────────────────────────────────────── -->
   <div class="hero-unified" id="top">
@@ -1369,6 +1485,7 @@
       <h2 class="dashboard-headline">See your business in real time.<br />Every single day.</h2>
       <p class="dashboard-sub">We build custom executive dashboards that give you a live pulse on revenue, cashflow, margins, and KPIs — so you stop waiting for reports and start making confident decisions.</p>
 
+      <div class="mock-db-wrap">
       <div class="mock-db">
         <div class="mock-db-bar">
           <span class="mock-db-bar-title">BluPrnt Executive Dashboard — Live View</span>
@@ -1426,6 +1543,7 @@
           </div>
         </div>
       </div>
+      </div><!-- end mock-db-wrap -->
     </div>
   </section>
 
@@ -1532,7 +1650,7 @@
       </div>
 
       <!-- ─── ACCOUNTING TEAM CALLOUT ───────────────────────── -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px;">
+      <div class="accounting-callout-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px;">
 
         <div style="background: #F0F7FF; border: 1px solid #BFDBFE; border-radius: 14px; padding: 32px;">
           <p style="font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #2563EB; margin-bottom: 12px;">No Accounting Team?</p>
@@ -1894,7 +2012,20 @@
   </div>
 
   <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('nav-hamburger');
+      menu.classList.toggle('open');
+      btn.classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobile-menu').classList.remove('open');
+      document.getElementById('nav-hamburger').classList.remove('active');
+    }
+
     function openModal(type) {
+      closeMobileMenu();
       document.getElementById('modal-' + type).classList.add('open');
       document.body.style.overflow = 'hidden';
     }
