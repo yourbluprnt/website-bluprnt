@@ -1132,6 +1132,101 @@
       background: rgba(255,255,255,0.08);
     }
 
+    /* ─── PROBLEM SECTION ────────────────────────────────────── */
+    .problem-section { background: #060810; padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    .problem-inner { max-width: 1140px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .problem-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #F59E0B; margin-bottom: 20px; }
+    .problem-headline { font-size: clamp(26px, 3vw, 40px); font-weight: 800; color: #FFFFFF; line-height: 1.2; margin-bottom: 24px; }
+    .problem-sub { font-size: 16px; color: #94A3B8; line-height: 1.8; }
+    .problem-points { display: flex; flex-direction: column; gap: 24px; }
+    .problem-point { display: flex; gap: 18px; align-items: flex-start; padding: 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; }
+    .problem-point-icon { width: 44px; height: 44px; min-width: 44px; border-radius: 10px; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .problem-point-title { font-size: 15px; font-weight: 700; color: #F1F5F9; margin-bottom: 5px; }
+    .problem-point-text { font-size: 13px; color: #64748B; line-height: 1.6; }
+
+    /* ─── DASHBOARD SECTION ───────────────────────────────────── */
+    .dashboard-section { background: #F4F7FB; padding: 100px 0; }
+    .dashboard-inner { max-width: 1140px; margin: 0 auto; padding: 0 40px; text-align: center; }
+    .dashboard-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #2563EB; margin-bottom: 14px; }
+    .dashboard-headline { font-size: clamp(26px, 3vw, 44px); font-weight: 800; color: #0D2952; line-height: 1.2; margin-bottom: 16px; }
+    .dashboard-sub { font-size: 17px; color: #64748B; line-height: 1.75; max-width: 640px; margin: 0 auto 56px; }
+    .mock-db { background: #FFFFFF; border-radius: 16px; border: 1px solid #E2E8F0; box-shadow: 0 24px 80px rgba(13,41,82,0.12); overflow: hidden; text-align: left; }
+    .mock-db-bar { background: #0D2952; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .mock-db-bar-title { font-size: 13px; font-weight: 600; color: #FFFFFF; }
+    .mock-db-live { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #4ADE80; font-weight: 600; }
+    .mock-db-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; animation: pulse-dot 2s infinite; }
+    @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .mock-db-kpis { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid #E2E8F0; }
+    .mock-kpi { padding: 22px 24px; border-right: 1px solid #E2E8F0; }
+    .mock-kpi:last-child { border-right: none; }
+    .mock-kpi-label { font-size: 10px; font-weight: 600; color: #94A3B8; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+    .mock-kpi-value { font-size: 22px; font-weight: 800; color: #0D2952; margin-bottom: 4px; }
+    .mock-kpi-delta { font-size: 11px; font-weight: 600; }
+    .mock-kpi-delta.up { color: #16A34A; } .mock-kpi-delta.down { color: #DC2626; } .mock-kpi-delta.neutral { color: #F59E0B; }
+    .mock-db-body { display: grid; grid-template-columns: 2fr 1fr; }
+    .mock-chart-area { padding: 24px 28px; border-right: 1px solid #E2E8F0; }
+    .mock-chart-title { font-size: 12px; font-weight: 700; color: #0D2952; margin-bottom: 16px; }
+    .mock-bars-wrap { display: flex; align-items: flex-end; gap: 10px; height: 110px; }
+    .mock-bar-col { flex: 1; display: flex; gap: 3px; align-items: flex-end; height: 100%; }
+    .mock-bar-seg { flex: 1; border-radius: 3px 3px 0 0; }
+    .mock-bar-seg.actual { background: #2563EB; }
+    .mock-bar-seg.target { background: #BFDBFE; }
+    .mock-bar-labels { display: flex; gap: 10px; margin-top: 8px; border-top: 1.5px solid #E2E8F0; padding-top: 8px; }
+    .mock-bar-lbl { flex: 1; text-align: center; font-size: 10px; color: #94A3B8; }
+    .mock-legend { display: flex; gap: 16px; margin-top: 12px; }
+    .mock-legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: #64748B; }
+    .mock-legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+    .mock-sidebar { padding: 24px; }
+    .mock-sidebar-title { font-size: 12px; font-weight: 700; color: #0D2952; margin-bottom: 12px; }
+    .mock-metric-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid #F1F5F9; }
+    .mock-metric-row:last-child { border-bottom: none; }
+    .mock-metric-name { font-size: 11px; color: #64748B; }
+    .mock-metric-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+    .badge-green { background: #DCFCE7; color: #16A34A; } .badge-yellow { background: #FEF9C3; color: #CA8A04; } .badge-red { background: #FEE2E2; color: #DC2626; }
+
+    /* ─── HOW IT WORKS ────────────────────────────────────────── */
+    .steps-section { background: #FFFFFF; padding: 100px 0; }
+    .steps-inner { max-width: 1140px; margin: 0 auto; padding: 0 40px; }
+    .steps-header { text-align: center; margin-bottom: 64px; }
+    .steps-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #2563EB; margin-bottom: 14px; }
+    .steps-headline { font-size: clamp(26px, 3vw, 42px); font-weight: 800; color: #0D2952; line-height: 1.2; margin-bottom: 14px; }
+    .steps-sub { font-size: 17px; color: #64748B; line-height: 1.75; max-width: 520px; margin: 0 auto; }
+    .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; position: relative; }
+    .steps-grid::before { content: ''; position: absolute; top: 34px; left: 12%; right: 12%; height: 2px; background: linear-gradient(90deg,#2563EB,#BFDBFE); z-index: 0; }
+    .step-card { text-align: center; position: relative; z-index: 1; }
+    .step-number { width: 68px; height: 68px; border-radius: 50%; background: #0D2952; color: #FFFFFF; font-size: 22px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 4px solid #FFFFFF; box-shadow: 0 0 0 2px #2563EB; }
+    .step-title { font-size: 16px; font-weight: 700; color: #0D2952; margin-bottom: 10px; }
+    .step-text { font-size: 14px; color: #64748B; line-height: 1.65; }
+
+    /* ─── STATS BAR ───────────────────────────────────────────── */
+    .stats-bar-new { background: linear-gradient(135deg, #0D2952 0%, #1a4080 50%, #2563EB 100%); padding: 72px 0; }
+    .stats-inner { max-width: 1140px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(4,1fr); }
+    .stat-item { text-align: center; padding: 0 24px; border-right: 1px solid rgba(255,255,255,0.12); }
+    .stat-item:last-child { border-right: none; }
+    .stat-number { font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: #FFFFFF; line-height: 1; margin-bottom: 10px; }
+    .stat-label { font-size: 14px; color: #BFDBFE; line-height: 1.5; }
+
+    /* ─── FOUNDER SECTION ─────────────────────────────────────── */
+    .founder-section { background: #060810; padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    .founder-inner { max-width: 1140px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+    .founder-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #F59E0B; margin-bottom: 18px; }
+    .founder-headline { font-size: clamp(24px, 2.8vw, 38px); font-weight: 800; color: #FFFFFF; line-height: 1.2; margin-bottom: 24px; }
+    .founder-quote { font-size: 17px; color: #BFDBFE; line-height: 1.8; font-style: italic; border-left: 3px solid #2563EB; padding-left: 24px; margin-bottom: 28px; }
+    .founder-bio { font-size: 15px; color: #64748B; line-height: 1.8; }
+    .founder-credentials { display: flex; flex-direction: column; gap: 16px; }
+    .founder-cred { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; }
+    .founder-cred-icon { width: 44px; height: 44px; min-width: 44px; border-radius: 10px; background: rgba(37,99,235,0.15); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .founder-cred-title { font-size: 14px; font-weight: 700; color: #F1F5F9; margin-bottom: 4px; }
+    .founder-cred-text { font-size: 13px; color: #64748B; line-height: 1.5; }
+
+    /* ─── FINAL CTA ───────────────────────────────────────────── */
+    .final-cta-section { background: #F4F7FB; padding: 100px 40px; text-align: center; }
+    .final-cta-box { max-width: 720px; margin: 0 auto; background: linear-gradient(135deg, #0D2952 0%, #2563EB 100%); border-radius: 20px; padding: 72px 60px; }
+    .final-cta-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #BFDBFE; margin-bottom: 20px; }
+    .final-cta-headline { font-size: clamp(26px, 3.5vw, 42px); font-weight: 800; color: #FFFFFF; line-height: 1.2; margin-bottom: 16px; }
+    .final-cta-sub { font-size: 17px; color: #BFDBFE; line-height: 1.7; margin-bottom: 40px; }
+    .final-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
     /* ─── RESPONSIVE ──────────────────────────────────────────── */
     @media (max-width: 900px) {
       .segment-split { grid-template-columns: 1fr; }
@@ -1143,6 +1238,16 @@
       .pricing-grid { grid-template-columns: 1fr; }
       .pricing-card.featured { transform: none; }
       .pricing-quick { grid-template-columns: 1fr 1fr; }
+      .problem-inner { grid-template-columns: 1fr; gap: 48px; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid::before { display: none; }
+      .stats-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 32px; }
+      .mock-db-kpis { grid-template-columns: 1fr 1fr; }
+      .mock-db-body { grid-template-columns: 1fr; }
+      .mock-chart-area { border-right: none; border-bottom: 1px solid #E2E8F0; }
+      .founder-inner { grid-template-columns: 1fr; gap: 48px; }
+      .final-cta-box { padding: 52px 36px; }
     }
 
     @media (max-width: 600px) {
@@ -1157,6 +1262,11 @@
       .form-row { grid-template-columns: 1fr; }
       .pricing-quick { grid-template-columns: 1fr; }
       .floating-cta { bottom: 16px; right: 16px; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .mock-db-kpis { grid-template-columns: 1fr 1fr; }
+      .problem-inner, .founder-inner { padding: 0 20px; }
+      .dashboard-inner, .steps-inner { padding: 0 20px; }
     }
   </style>
 </head>
@@ -1184,8 +1294,12 @@
   <div class="hero-unified" id="top">
     <div class="hero-unified-content">
       <img src="logo-full.png" alt="BluPrnt Solutions" class="hero-logo" />
-      <h1 class="hero-headline" style="color:#FFFFFF;">We've built businesses.<br />We know what keeps<br />you up at night.</h1>
-      <p class="hero-sub" style="color:rgba(255,255,255,0.75); max-width:640px; margin:0 auto 0;">As business owners ourselves, we understand the real pressure of tight margins, cashflow gaps, and not always knowing what options are available. We build real-time visual dashboards so you have a pulse on your business at all times — not just what your accountant tells you at year end, when it's too late to act.</p>
+      <h1 class="hero-headline" style="color:#FFFFFF; font-size:clamp(34px,4.5vw,64px);">Get your time back.<br />And your clarity.</h1>
+      <p class="hero-sub" style="color:rgba(255,255,255,0.75); max-width:640px; margin:0 auto 36px;">Business owners spend too much time chasing numbers that are already out of date. We give you a live financial command centre — so you spend less time looking backwards and more time moving forward.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="#how-it-works" class="hero-btn hero-btn-biz">See How It Works</a>
+        <a href="#" onclick="openModal('biz');return false;" style="display:inline-block;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,0.4);color:#FFFFFF;transition:all 0.25s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Book a Free 15-Min Call</a>
+      </div>
     </div>
   </div>
 
@@ -1214,60 +1328,159 @@
     </div>
   </div>
 
-  <!-- ─── TRUST BAR ────────────────────────────────────────── -->
-  <div class="trust-bar">
-    <div class="trust-item"><span class="icon">💼</span> Fractional CFO Services</div>
-    <div class="trust-item"><span class="icon">📊</span> Financial Planning & Analysis</div>
-    <div class="trust-item"><span class="icon">💰</span> Capital Raising</div>
-    <div class="trust-item"><span class="icon">📈</span> Cashflow Optimization</div>
-    <div class="trust-item"><span class="icon">🤝</span> Business Advisory</div>
-  </div>
-
-  <!-- ─── TEAM SECTION ─────────────────────────────────────── -->
-  <section style="background: #FFFFFF; padding: 80px 0; border-bottom: 1px solid #E2E8F0;">
-    <div style="max-width: 1140px; margin: 0 auto; padding: 0 40px; text-align: center;">
-      <p style="font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #2563EB; margin-bottom: 14px;">Who We Are</p>
-      <h2 style="font-size: clamp(26px, 3vw, 40px); font-weight: 800; color: #0D2952; margin-bottom: 20px; line-height: 1.2;">Led by professionals.<br />Grounded in real-world experience.</h2>
-      <p style="font-size: 17px; color: #64748B; line-height: 1.8; max-width: 760px; margin: 0 auto 56px;">BluPrnt is led by a team of seasoned business and financial professionals — CPAs, former operators, and industry veterans — who have built, run, and scaled businesses across multiple sectors. We don't just advise from the sidelines. We've felt the margin pressure, managed the cashflow gaps, and found the financing when the bank said no. That experience is what we bring to every client engagement.</p>
-
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: left;">
-
-        <div style="display: flex; gap: 16px; align-items: flex-start;">
-          <div style="width: 44px; height: 44px; min-width: 44px; background: #EFF6FF; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🎓</div>
+  <!-- ─── PROBLEM SECTION ─────────────────────────────────── -->
+  <section class="problem-section">
+    <div class="problem-inner">
+      <div>
+        <p class="problem-label">The Reality</p>
+        <h2 class="problem-headline">Most business owners find out how last year went at year end.<br />By then, it's too late.</h2>
+        <p class="problem-sub">You're already juggling operations, people, clients, and growth. The last thing you need is to chase numbers that are already months out of date — or wait for a year-end report that tells you what you can no longer change.</p>
+      </div>
+      <div class="problem-points">
+        <div class="problem-point">
+          <div class="problem-point-icon">⏰</div>
           <div>
-            <p style="font-size: 15px; font-weight: 700; color: #0D2952; margin-bottom: 4px;">Certified Professionals</p>
-            <p style="font-size: 14px; color: #64748B; line-height: 1.6;">Our team holds CPA designations and professional credentials backed by years of hands-on financial leadership.</p>
+            <p class="problem-point-title">You're spending hours chasing numbers</p>
+            <p class="problem-point-text">Business owners lose 10+ hours a week on financial admin that should be automated, delegated, or eliminated entirely.</p>
           </div>
         </div>
-
-        <div style="display: flex; gap: 16px; align-items: flex-start;">
-          <div style="width: 44px; height: 44px; min-width: 44px; background: #EFF6FF; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🏢</div>
+        <div class="problem-point">
+          <div class="problem-point-icon">📅</div>
           <div>
-            <p style="font-size: 15px; font-weight: 700; color: #0D2952; margin-bottom: 4px;">Business Owners Ourselves</p>
-            <p style="font-size: 14px; color: #64748B; line-height: 1.6;">We've owned and operated businesses across sectors — so we understand your challenges from the inside, not just the spreadsheet.</p>
+            <p class="problem-point-title">Your data is always out of date</p>
+            <p class="problem-point-text">By the time your accountant sends the numbers, the moment to act has already passed. You're reacting, not deciding.</p>
           </div>
         </div>
-
-        <div style="display: flex; gap: 16px; align-items: flex-start;">
-          <div style="width: 44px; height: 44px; min-width: 44px; background: #EFF6FF; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">💡</div>
+        <div class="problem-point">
+          <div class="problem-point-icon">❓</div>
           <div>
-            <p style="font-size: 15px; font-weight: 700; color: #0D2952; margin-bottom: 4px;">Practical, Not Theoretical</p>
-            <p style="font-size: 14px; color: #64748B; line-height: 1.6;">Our advice is built on what actually works — not textbook frameworks. We focus on outcomes that move the needle in the real world.</p>
+            <p class="problem-point-title">You don't know what options exist</p>
+            <p class="problem-point-text">Most owners don't know what financing alternatives, tax strategies, or growth levers are available. And their advisors aren't telling them.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ─── MID-PAGE CTA STRIP ──────────────────────────────── -->
-  <div class="cta-strip">
-    <h3>Not sure where to start? Let's figure it out together.</h3>
-    <p>A 15-minute call costs nothing. The clarity it brings could change everything.</p>
-    <div class="cta-strip-btns">
-      <button class="btn-white" onclick="openModal('biz')">Business Inquiry</button>
-      <button class="btn-ghost-white" onclick="openModal('con')">Construction Inquiry</button>
-      <a href="#pricing" class="btn-ghost-white">View Pricing</a>
+  <!-- ─── DASHBOARD SECTION ────────────────────────────────── -->
+  <section class="dashboard-section">
+    <div class="dashboard-inner">
+      <p class="dashboard-label">The BluPrnt Difference</p>
+      <h2 class="dashboard-headline">See your business in real time.<br />Every single day.</h2>
+      <p class="dashboard-sub">We build custom executive dashboards that give you a live pulse on revenue, cashflow, margins, and KPIs — so you stop waiting for reports and start making confident decisions.</p>
+
+      <div class="mock-db">
+        <div class="mock-db-bar">
+          <span class="mock-db-bar-title">BluPrnt Executive Dashboard — Live View</span>
+          <span class="mock-db-live"><span class="mock-db-live-dot"></span> Live</span>
+        </div>
+        <div class="mock-db-kpis">
+          <div class="mock-kpi">
+            <p class="mock-kpi-label">Monthly Revenue</p>
+            <p class="mock-kpi-value">$284,500</p>
+            <p class="mock-kpi-delta up">↑ 12.4% vs last month</p>
+          </div>
+          <div class="mock-kpi">
+            <p class="mock-kpi-label">Gross Margin</p>
+            <p class="mock-kpi-value">38.2%</p>
+            <p class="mock-kpi-delta up">↑ 2.1% above target</p>
+          </div>
+          <div class="mock-kpi">
+            <p class="mock-kpi-label">Cash Position</p>
+            <p class="mock-kpi-value">$142,800</p>
+            <p class="mock-kpi-delta neutral">→ 28-day runway</p>
+          </div>
+          <div class="mock-kpi">
+            <p class="mock-kpi-label">AR Outstanding</p>
+            <p class="mock-kpi-value">$67,200</p>
+            <p class="mock-kpi-delta down">↓ 3 invoices overdue</p>
+          </div>
+        </div>
+        <div class="mock-db-body">
+          <div class="mock-chart-area">
+            <p class="mock-chart-title">Revenue vs Target — Last 6 Months</p>
+            <div class="mock-bars-wrap">
+              <div class="mock-bar-col"><div class="mock-bar-seg actual" style="height:65%"></div><div class="mock-bar-seg target" style="height:72%"></div></div>
+              <div class="mock-bar-col"><div class="mock-bar-seg actual" style="height:71%"></div><div class="mock-bar-seg target" style="height:72%"></div></div>
+              <div class="mock-bar-col"><div class="mock-bar-seg actual" style="height:68%"></div><div class="mock-bar-seg target" style="height:76%"></div></div>
+              <div class="mock-bar-col"><div class="mock-bar-seg actual" style="height:82%"></div><div class="mock-bar-seg target" style="height:76%"></div></div>
+              <div class="mock-bar-col"><div class="mock-bar-seg actual" style="height:79%"></div><div class="mock-bar-seg target" style="height:80%"></div></div>
+              <div class="mock-bar-col"><div class="mock-bar-seg actual" style="height:92%"></div><div class="mock-bar-seg target" style="height:82%"></div></div>
+            </div>
+            <div class="mock-bar-labels">
+              <span class="mock-bar-lbl">Dec</span><span class="mock-bar-lbl">Jan</span><span class="mock-bar-lbl">Feb</span><span class="mock-bar-lbl">Mar</span><span class="mock-bar-lbl">Apr</span><span class="mock-bar-lbl">May</span>
+            </div>
+            <div class="mock-legend">
+              <span class="mock-legend-item"><span class="mock-legend-dot" style="background:#2563EB"></span> Actual</span>
+              <span class="mock-legend-item"><span class="mock-legend-dot" style="background:#BFDBFE"></span> Target</span>
+            </div>
+          </div>
+          <div class="mock-sidebar">
+            <p class="mock-sidebar-title">Key Metrics</p>
+            <div class="mock-metric-row"><span class="mock-metric-name">Payroll Coverage</span><span class="mock-metric-badge badge-green">On Track</span></div>
+            <div class="mock-metric-row"><span class="mock-metric-name">GST/HST Remittance</span><span class="mock-metric-badge badge-green">Filed</span></div>
+            <div class="mock-metric-row"><span class="mock-metric-name">30+ Day AR</span><span class="mock-metric-badge badge-yellow">Review</span></div>
+            <div class="mock-metric-row"><span class="mock-metric-name">Q2 Forecast</span><span class="mock-metric-badge badge-green">Ahead</span></div>
+            <div class="mock-metric-row"><span class="mock-metric-name">Loan Covenant</span><span class="mock-metric-badge badge-green">Met</span></div>
+            <div class="mock-metric-row"><span class="mock-metric-name">Overhead Ratio</span><span class="mock-metric-badge badge-red">High</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW IT WORKS ─────────────────────────────────────── -->
+  <section class="steps-section" id="how-it-works">
+    <div class="steps-inner">
+      <div class="steps-header">
+        <p class="steps-label">How It Works</p>
+        <h2 class="steps-headline">Simple. Clear. Built around you.</h2>
+        <p class="steps-sub">We don't drop a binder and disappear. We embed in your business, learn how it runs, and build financial systems that actually work for you.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <p class="step-title">Free 15-Min Call</p>
+          <p class="step-text">We start with a no-pressure conversation to understand where your business is and what's getting in the way.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <p class="step-title">Assess & Diagnose</p>
+          <p class="step-text">We dig into your financials, processes, and goals — identifying exactly where we can create the most impact, fast.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <p class="step-title">Build & Deliver</p>
+          <p class="step-text">We set up your dashboard, clean up your books, and build the reporting and advisory structure your business needs.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <p class="step-title">Advise & Scale</p>
+          <p class="step-text">We stay in your corner — advising on cashflow, capital, and growth decisions so you're never making big calls alone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STATS BAR ─────────────────────────────────────────── -->
+  <div class="stats-bar-new">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <p class="stat-number">15 min</p>
+        <p class="stat-label">Free call to get started — no pitch, no pressure</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">100%</p>
+        <p class="stat-label">Real-time financial visibility, every day</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">10+ hrs</p>
+        <p class="stat-label">Saved per week on financial admin</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">2</p>
+        <p class="stat-label">Specialized divisions — Business &amp; Construction</p>
+      </div>
     </div>
   </div>
 
@@ -1406,6 +1619,48 @@
     </div>
   </section>
 
+  <!-- ─── FOUNDER SECTION ─────────────────────────────────── -->
+  <section class="founder-section">
+    <div class="founder-inner">
+      <div>
+        <p class="founder-label">Who We Are</p>
+        <h2 class="founder-headline">We've owned businesses. We know what you're carrying.</h2>
+        <p class="founder-quote">"The best financial advice doesn't come from someone who read about your industry — it comes from someone who's been in it."</p>
+        <p class="founder-bio">BluPrnt is led by a team of CPAs, former operators, and industry veterans who have built, run, and scaled businesses across multiple sectors. We've felt the margin pressure, managed the cashflow gaps, and found the financing when the bank said no. We didn't build BluPrnt to be another accounting firm. We built it to be the financial partner we wish we'd had.</p>
+      </div>
+      <div class="founder-credentials">
+        <div class="founder-cred">
+          <div class="founder-cred-icon">🎓</div>
+          <div>
+            <p class="founder-cred-title">CPA-Designated Professionals</p>
+            <p class="founder-cred-text">Our team holds CPA designations backed by years of hands-on financial leadership across multiple industries.</p>
+          </div>
+        </div>
+        <div class="founder-cred">
+          <div class="founder-cred-icon">🏢</div>
+          <div>
+            <p class="founder-cred-title">Business Owners Ourselves</p>
+            <p class="founder-cred-text">We've owned and operated businesses — so we understand your challenges from the inside, not just the spreadsheet.</p>
+          </div>
+        </div>
+        <div class="founder-cred">
+          <div class="founder-cred-icon">🏗️</div>
+          <div>
+            <p class="founder-cred-title">Deep Construction Experience</p>
+            <p class="founder-cred-text">We've operated in the trades — we understand job costing, holdbacks, draws, and the unique cashflow rhythm of contracting.</p>
+          </div>
+        </div>
+        <div class="founder-cred">
+          <div class="founder-cred-icon">💡</div>
+          <div>
+            <p class="founder-cred-title">Practical, Not Theoretical</p>
+            <p class="founder-cred-text">Our advice is built on what actually works in the real world — not textbook frameworks or generic templates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── PRICING SECTION ─────────────────────────────────── -->
   <section id="pricing">
     <div class="section-inner">
@@ -1511,6 +1766,19 @@
 
       <p class="pricing-note">All packages are customizable. Construction &amp; trades clients may see adjusted pricing due to job costing complexity. &nbsp;·&nbsp; <a href="#" onclick="openModal('biz'); return false;">Talk to us about your specific needs →</a></p>
 
+    </div>
+  </section>
+
+  <!-- ─── FINAL CTA ───────────────────────────────────────── -->
+  <section class="final-cta-section">
+    <div class="final-cta-box">
+      <p class="final-cta-eyebrow">Take the First Step</p>
+      <h2 class="final-cta-headline">Stop running blind.<br />Start running smart.</h2>
+      <p class="final-cta-sub">A 15-minute call costs nothing. The clarity it brings could change everything. Let's talk about where your business is — and where it could go.</p>
+      <div class="final-cta-btns">
+        <button class="btn-white" onclick="openModal('biz')">Business Inquiry</button>
+        <button class="btn-ghost-white" onclick="openModal('con')">Construction Inquiry</button>
+      </div>
     </div>
   </section>
 
